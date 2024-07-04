@@ -4,8 +4,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.css';
 import Layout from './pages/Layout.test';  // Ensure these components are correctly imported
 import Home from './pages/App';      // Ensure these components are correctly imported
-import Maps from './pages/Map.test';      // Ensure these components are correctly imported
 import reportWebVitals from './reportWebVitals';
+import Maps from './pages/mappozze.test';
+import UserProfile from "./pages/userProfile"
+import Logged from "./pages/loggedInProfile.tsx"
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="maps" element={<Maps />} />
+          <Route path="logged" element={<Logged />} />
         </Route>
       </Routes>
     </BrowserRouter>

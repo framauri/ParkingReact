@@ -1,4 +1,3 @@
-// src/components/NearbyParking.js
 import React, { useState, useEffect } from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import axios from 'axios';
@@ -16,7 +15,7 @@ function NearbyParking() {
     navigator.geolocation.getCurrentPosition(
       (position) => {
         const { latitude, longitude } = position.coords;
-        setLocation({ lat: latitude, lng: longitude });
+        setLocation({ lat: parseFloat(latitude), lng: parseFloat(longitude) });
         fetchParkingSpots(latitude, longitude);
       },
       (error) => {
@@ -43,9 +42,17 @@ function NearbyParking() {
   return (
     <LoadScript googleMapsApiKey="AIzaSyD1YSU6xwBjts7OLW9GBIdsdIcLpn9WjHw">
       <GoogleMap mapContainerStyle={containerStyle} center={location} zoom={15}>
-        {parkingSpots.map((spot) => (
-          <Marker key={spot.id} position={{ lat: spot.lat, lng: spot.lng }} />
-        ))}
+        {parkingSpots.map((spot) => {
+          // Ensure that spot.lat and spot.lng are valid numbers
+          const spotLat = parseFloat(spot.lat);
+          const spotLng = parseFloat(spot.lng);
+
+          // Check if the values are numbers before rendering the Marker
+          if (!isNaN(spotLat) && !isNaN(spotLng)) {
+            return <Marker key={spot.id} position={{ lat: spotLat, lng: spotLng }} />;
+          }
+          return null;
+        })}
       </GoogleMap>
     </LoadScript>
   );

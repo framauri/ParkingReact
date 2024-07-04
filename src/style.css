@@ -1,0 +1,12 @@
+
+/* styles.css */
+.App {
+    font-family: 'Roboto', sans-serif;
+    background: url('https://images.unsplash.com/photo-1572072393749-3ca9c8ea0831?auto=format&w=1000&dpr=2') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  

@@ -7,15 +7,16 @@ const Layout = () => {
       <header>
         <nav>
           <ul>
-            <li>
-              <Link to="/">Home</Link>
+          <li>
+              <Link to="/logged">Home</Link>
             </li>
             <li>
-              <Link to="/maps">Maps</Link>
+              <Link to="/">My Profile</Link>
             </li>
             <li>
-              <Link to="/nopage">No Page</Link>
+              <Link to="/maps">Parking</Link>
             </li>
+            
           </ul>
         </nav>
       </header>
