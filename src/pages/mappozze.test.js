@@ -1,6 +1,7 @@
 // src/App.js
 import React from 'react';
 import Mappozze from './mappozze';
+import '../mappozze.css';  // Importa il file CSS 
 
 function Maps() {
   return (

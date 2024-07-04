@@ -1,5 +1,6 @@
 import React from 'react';
 import { Outlet, Link } from 'react-router-dom';
+//import '../navbar.css';  // Importa il file CSS 
 
 const Layout = () => {
   return (

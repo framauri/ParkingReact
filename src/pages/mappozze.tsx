@@ -196,6 +196,13 @@ const Mappozze = () => {
                 <h3>{spot.name}</h3>
                 <p>Type: {spot.type}</p>
                 <p>Total Spaces: {spot.totalSpaces}</p>
+                <a
+                    href={getDirectionsUrl(spot.location)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Get Directions
+                  </a>
               </li>
             ))}
           </ul>
